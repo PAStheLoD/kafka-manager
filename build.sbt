@@ -7,7 +7,7 @@ name := """kafka-manager"""
 /* For packaging purposes, -SNAPSHOT MUST contain a digit */
 version := "1.3.3.15"
 
-scalaVersion := "2.11.8"
+scalaVersion := "2.11.12"
 
 scalacOptions ++= Seq("-Xlint:-missing-interpolator","-Xfatal-warnings","-deprecation","-feature","-language:implicitConversions","-language:postfixOps","-Xmax-classfile-name","240")
 
@@ -19,8 +19,8 @@ assemblyMergeStrategy in assembly := {
 }
 
 libraryDependencies ++= Seq(
-  "com.typesafe.akka" %% "akka-actor" % "2.3.14",
-  "com.typesafe.akka" %% "akka-slf4j" % "2.3.14",
+  "com.typesafe.akka" %% "akka-actor" % "2.3.16",
+  "com.typesafe.akka" %% "akka-slf4j" % "2.3.16",
   "com.google.code.findbugs" % "jsr305" % "2.0.1",
   "org.webjars" %% "webjars-play" % "2.4.0-2",
   "org.webjars" % "bootstrap" % "3.3.5",
@@ -59,6 +59,8 @@ coverageExcludedPackages := "<empty>;controllers.*;views.*;models.*"
  * Allow packaging as part of the build
  */
 enablePlugins(SbtNativePackager)
+
+
 
 /* Debian Settings - to create, run as:
    $ sbt debian:packageBin
